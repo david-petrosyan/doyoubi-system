@@ -1,0 +1,18 @@
+@charset utf-8;
+
+
+body {
+	background-color: grey;
+}
+
+dt {
+	font-size:1.5em;
+}
+
+dd {
+	font-size: 1em;
+}
+.abc {
+	text-align: center;
+}
+
