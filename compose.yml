@@ -1,21 +1,21 @@
-services :
-  web :
-    image : nginx:latest
-    ports :
+services:
+  web:
+    image: nginx:latest
+    ports:
       - 80:80
-    volumes :
+    volumes:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
       - ./public/:/var/www/public/
-      - image:/var/www/public/
-    depends_on :
-      - php _
-  php :
-    container_name : php
-    build :
-      context : .
-      target : php
-    volumes :
-      - ./public/:/var/www/publi/
+      - image:/var/www/upload/image/
+    depends_on:
+      - php
+  php:
+    container_name: php-system
+    build:
+      context: .
+      target: php
+    volumes:
+      - ./public/:/var/www/public/
       - image:/var/www/upload/image/
   mysql:
     container_name: mysql
@@ -31,6 +31,13 @@ services :
       --character-set-server=utf8mb4
       --collation-server=utf8mb4_unicode_ci
       --max_allowed_packet=4MB
+ 
+  redis:
+   container_name: redis
+   image: redis:latest
+   ports:
+      - 6379:6379
+ 
 volumes:
   image:
     driver: local

@@ -3,9 +3,13 @@ RUN apk add -U --no-cache curl-dev
 RUN docker-php-ext-install curl
 RUN docker-php-ext-install exif
 
+RUN apk add git
+RUN git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis
+RUN docker-php-ext-install redis
+
 RUN apk add autoconf g++ make
 RUN pecl install apcu && docker-php-ext-enable apcu
 
 RUN docker-php-ext-install pdo_mysql
 RUN install -o www-data -g www-data -d /var/www/upload/image/
-
+COPY ./php.ini ${PHP_INI_DIR}/php.ini
