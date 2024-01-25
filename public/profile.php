@@ -57,7 +57,93 @@ if (!empty($_SESSION['login_user_id'])) { // ログインしている場合
 }
 
 ?>
+
+
+<html>
+<style>
+
+body{
+ background: linear-gradient(#e66465, #9198e5);
+}
+
+h1 {
+ text-align: center;
+ margin: auto;
+ width: 400px;
+ height: 40px;
+ background: ;
+ color: #bbb;
+ font-size: 1.8em;
+ border-radius: ;
+}
+hr {
+ margin-top: 40px;
+ margin-bottom: 40px;
+}
+form{
+ padding: 20px;
+ width: 20%;
+ height: 10%;
+ margin: auto;
+ margin-bottom: 20px;
+ text-align: center;
+ background: rgba(255,255,255,0.5);
+ color: white;
+ font-size: 1.8em;
+ border-top: grey 4px solid;
+ border-bottom: ;
+ border-radius: 4px;
+}
+dl{
+ margin-top: 20px;
+}
+button{
+ margin-top: ;
+ text-align: center;
+ background: green;
+ color: white;
+ font-size: 0.8em;
+ border: grey 1px solid;
+ border-radius: 20px;
+}
+button:hover {
+ color: grey;
+ cursor: pointer;
+}
+
+p {
+ color: ;
+ font-size: 2em;
+
+
+}
+
+
+a {
+ text-decoration: none;
+}
+.p {
+ color white;
+ font-size: 20px;
+ width: 20%;
+ margin: auto;
+}
+.p span {
+ color: white;
+}
+@media only screen and (min-width: 800px) {
+ form {
+
+}
+</style>
+</html>
+
+
+
 <a href ="/timeline.php"> Return to timeline</a>
+
+
+
 
 <div style="
     width: 100%; height: 15em;

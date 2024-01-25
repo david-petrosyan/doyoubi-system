@@ -175,7 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const entryTemplate = document.getElementById('entryTemplate');
   const entriesRenderArea = document.getElementById('entriesRenderArea');
+  let page = 1;
 
+  function fetchEntries() {
   const request = new XMLHttpRequest();
   request.onload = (event) => {
     const response = event.target.response;
@@ -229,6 +231,16 @@ document.addEventListener("DOMContentLoaded", () => {
   request.open('GET' , '/timeline_json.php' , true);  // Hit timeline_json.php
   request.responseType = 'json';
   request.send();
+  page++;
+  }
+
+  fetchEntries();
+
+  window.addEventListener("scroll", () => {
+  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+	  fetchEntries();
+  }
+  });
 
 
   // For reducing the image below
